@@ -48,8 +48,9 @@ y@localhost:~$ . fasttext/bin/activate
 ### バイナリをインストール
 
 ```sh
-(fasttext) y@localhost:~/work$ cd fastText/build/
-(fasttext) y@localhost:~/work/fastText/build$ cmake ..
+(fasttext) y@localhost:~/work$ sudo apt install cmake -y
+(fasttext) y@localhost:~/work$ cd fastText
+(fasttext) y@localhost:~/work/fastText$ mkdir -p build && cd build && cmake ..
 (fasttext) y@localhost:~/work/fastText/build$ make && sudo make install
 ```
 
