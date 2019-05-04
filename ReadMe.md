@@ -10,6 +10,7 @@ y@localhost:~$ . fasttext/bin/activate
 ## 必要なパッケージをインストール
 
 ```sh
+(fasttext) y@localhost:~$ pip install --upgrade pip
 (fasttext) y@localhost:~$ pip install cython janome
 ```
 
@@ -39,7 +40,7 @@ y@localhost:~$ . fasttext/bin/activate
 >
 > Type "help", "copyright", "credits" or "license" for more information.
 >
-> &gt;&gt;&gt; import fasttext
+> &gt;&gt;&gt; import fastText
 >
 > &gt;&gt;&gt; exit()
 >
@@ -47,7 +48,7 @@ y@localhost:~$ . fasttext/bin/activate
 ### バイナリをインストール
 
 ```sh
-(fasttext) y@localhost:~/work$cd fastText/build/
+(fasttext) y@localhost:~/work$ cd fastText/build/
 (fasttext) y@localhost:~/work/fastText/build$ cmake ..
 (fasttext) y@localhost:~/work/fastText/build$ make && sudo make install
 ```
