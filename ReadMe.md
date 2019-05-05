@@ -1,4 +1,4 @@
-# fastText環境構築・データファイル準備
+# fastText 環境構築・データファイル準備
 
 ## 仮想環境を用意
 
@@ -14,9 +14,9 @@ y@localhost:~$ . fasttext/bin/activate
 (fasttext) y@localhost:~$ pip install cython janome
 ```
 
-## fastTextをインストール
+## fastText をインストール
 
-### Pythonパッケージをインストール
+### Python パッケージをインストール
 
 ```sh
 (fasttext) y@localhost:~$ mkdir -p work && cd work
@@ -33,7 +33,6 @@ y@localhost:~$ . fasttext/bin/activate
 
 インポートした際にエラーが発生しないことを確認する。
 
->
 > Python 3.6.7 (default, Oct 22 2018, 11:32:17)
 >
 > [GCC 8.2.0] on linux
@@ -43,7 +42,6 @@ y@localhost:~$ . fasttext/bin/activate
 > &gt;&gt;&gt; import fastText
 >
 > &gt;&gt;&gt; exit()
->
 
 ### バイナリをインストール
 
@@ -59,57 +57,68 @@ y@localhost:~$ . fasttext/bin/activate
 (fasttext) y@localhost:~$ which fasttext
 ```
 
->
 > /usr/local/bin/fasttext
->
 
 ```sh
 (fasttext) y@localhost:~$ fasttext
 ```
 
->
 > usage: fasttext &lt;command&gt; &lt;args&gt;
->
->
 >
 > The commands supported by fasttext are:
 >
+> supervised train a supervised classifier
 >
+> quantize quantize a model to reduce the memory usage
 >
->   supervised              train a supervised classifier
+> test evaluate a supervised classifier
 >
->   quantize                quantize a model to reduce the memory usage
+> test-label print labels with precision and recall scores
 >
->   test                    evaluate a supervised classifier
+> predict predict most likely labels
 >
->   test-label              print labels with precision and recall scores
+> predict-prob predict most likely labels with probabilities
 >
->   predict                 predict most likely labels
+> skipgram train a skipgram model
 >
->   predict-prob            predict most likely labels with probabilities
+> cbow train a cbow model
 >
->   skipgram                train a skipgram model
+> print-word-vectors print word vectors given a trained model
 >
->   cbow                    train a cbow model
+> print-sentence-vectors print sentence vectors given a trained model
 >
->   print-word-vectors      print word vectors given a trained model
+> print-ngrams print ngrams given a trained model and word
 >
->   print-sentence-vectors  print sentence vectors given a trained model
+> nn query for nearest neighbors
 >
->   print-ngrams            print ngrams given a trained model and word
+> analogies query for analogies
 >
->   nn                      query for nearest neighbors
->
->   analogies               query for analogies
->
->   dump                    dump arguments,dictionary,input/output vectors
->
+> dump dump arguments,dictionary,input/output vectors
 
 ```sh
 (fasttext) y@localhost:~$ deactivate
 y@localhost:~$ which fasttext
 ```
 
->
 > /usr/local/bin/fasttext
+
+# 学習
+
+```sh
+(fasttext) y@localhost:~/work/fastText$ nano inputdata.txt
+(fasttext) y@localhost:~/work/fastText$ ./fasttext supervised -input inputdata.txt -output model
+```
+
+> Read 0M words
 >
+> Number of words: 419
+>
+> Number of labels: 2
+>
+> Progress: 100.0% words/sec/thread: 3695 lr: 0.000000 loss: 0.694113 ETA: 0h 0m
+
+# 予測
+
+```sh
+(fasttext) y@localhost:~/work/fastText$ ./fasttext predict-prob model.bin pred.txt 1
+```
