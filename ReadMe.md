@@ -1,4 +1,4 @@
-# fastText 環境構築・データファイル準備
+# fastText 環境構築
 
 ## 仮想環境を用意
 
@@ -102,10 +102,45 @@ y@localhost:~$ which fasttext
 
 > /usr/local/bin/fasttext
 
+# データファイル準備
+
+## プレーンテキストを用意
+
+以下の形式で、訓練用／テスト用テキストファイルを用意
+
+```sh
+(fasttext) y@localhost:~/work/fastText$ cat inputdata.txt
+```
+
+```
+
+```
+
+```sh
+(fasttext) y@localhost:~/work/fastText$ cat pred.txt
+```
+
+```
+
+```
+
+## ラベル付け
+
+訓練用テキストファイルの各行に対して、ラベルを追加
+
+```sh
+(fasttext) y@localhost:~/work/fastText$ cat inputdata.txt
+```
+
+```
+__label__LABELTEXT, TEXT
+```
+
+## 分かち書き
+
 # 学習
 
 ```sh
-(fasttext) y@localhost:~/work/fastText$ nano inputdata.txt
 (fasttext) y@localhost:~/work/fastText$ ./fasttext supervised -input inputdata.txt -output model
 ```
 
