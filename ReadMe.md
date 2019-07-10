@@ -157,3 +157,7 @@ __label__LABELTEXT, TEXT
 ```sh
 (fasttext) y@localhost:~/work/fastText$ ./fasttext predict-prob model.bin pred.txt 1
 ```
+
+---
+
+Copyright (c) 2019 YA-androidapp(https://github.com/YA-androidapp) All rights reserved.
